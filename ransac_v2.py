@@ -21,6 +21,7 @@ def get_tolerent(x0,y0,x1,y1):
 
 max_distance = init_torrent
 waiting_list = np.arange(1, box_num+1)
+total_list = np.arange(1,box_num+1)
 for frame in range(1, frame_num - 1):
     max_distance = init_torrent
     while True:
@@ -66,7 +67,7 @@ for frame in range(1, frame_num - 1):
            # print m
             valid_test = 0
             total_test = len(rest_list)
-            for j in rest_list:
+            for j in total_list:
                 f=open(video_name + "_" +str(j), "r")
                 raw = f.readlines()[frame -1:frame+1]
                 curr_p = raw[0].split()
